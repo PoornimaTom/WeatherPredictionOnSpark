@@ -121,7 +121,7 @@ public class WeatherPredictor {
 
 		try {
 
-			// // Including TimeStamp, creating vector to predict regression
+			// Creating input vector to predict regression
 			Vector inputDataRegression = Vectors.sparse(5, new int[] { 0, 1, 2,
 					3, 4 }, new double[] { inputFeatures.getLatitude(),
 					inputFeatures.getLongitude(), inputFeatures.getElevation(),
@@ -143,6 +143,7 @@ public class WeatherPredictor {
 					inputDataRegression);
 			weatherDTO.setPressure(pressure);
 
+			// Creating input vector to predict classification
 			Vector testDataClassifier = Vectors.sparse(
 					8,
 					new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
