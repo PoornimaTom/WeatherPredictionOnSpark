@@ -66,7 +66,7 @@ eg: spark-submit --class com.weatherpred.application.WeatherPredictor WeatherPre
 --long           **Longitude of the location
 --ele            **Elevation of the location 
 --time           **Unix TimeStamp
---out		         **Output Location
+--out		     **Output Location
 
 
 **  -> Mandatory arguments  
