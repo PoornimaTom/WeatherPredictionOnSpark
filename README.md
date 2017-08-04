@@ -17,7 +17,7 @@ The basic premise of machine learning is to build algorithmic models that receiv
 * [WorldWeatherOnline](https://developer.worldweatheronline.com/)
 
 
-Weather prediction involves prediction of temperature, pressure, humidity and weather condition. The first three predicates are **continuous** values which needs a **regression model** for prediction. The weather condition can be either of Rain, Snow or Sunny, predicting which is a **classification problem**. For predicting humidity, pressure and temperature, a regression model was built using **Decision Tree Regression **. For predicting weather condition, **Decision Tree Classifier** was used.
+Weather prediction involves prediction of temperature, pressure, humidity and weather condition. The first three predicates are **continuous** values which needs a **regression model** for prediction. The weather condition can be either of Rain, Snow or Sunny, predicting which is a **classification problem**. For predicting humidity, pressure and temperature, a regression model was built using **Decision Tree Regression**. For predicting weather condition, **Decision Tree Classifier** was used.
 
 Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.html) library for the decision tree regression and classification. Spark Provides support of big data frameworks, which would help in production level deployment
 
