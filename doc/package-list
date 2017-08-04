@@ -1,0 +1,11 @@
+com.weatherpred.application
+com.weatherpred.application.test
+com.weatherpred.dto
+com.weatherpred.enums
+com.weatherpred.exceptions
+com.weatherpred.mlmodel
+com.weatherpred.modelbuilder
+com.weatherpred.modelbuilder.test
+com.weatherpred.util
+com.weatherpred.util.test
+com.weatherpred.utils.constants
