@@ -1,6 +1,7 @@
 package com.weatherpred.util;
 
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 import org.apache.log4j.Logger;
@@ -145,8 +146,9 @@ public class MLModelUtil {
 	 */
 	public static String getWeatherDataLocation() {
 		try {
+			Locale locale = new Locale("en", "IN");
 			final ResourceBundle rb = ResourceBundle
-					.getBundle(Constants.MODEL_RESOURCE_BUNDLE);
+					.getBundle(Constants.MODEL_RESOURCE_BUNDLE, locale);
 			return (rb.getString(ModelConstants.WEATHER_DATA_LOCATION));
 		} catch (Exception e) {
 

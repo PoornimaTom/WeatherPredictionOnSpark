@@ -27,8 +27,7 @@ import com.weatherpred.exceptions.WeatherPredException;
  * 
  * @version 0.1
  *
- *
- */
+ * */
 
 public class DecisionTreeRegressionModel implements AbstractMlModel,
 		Serializable {

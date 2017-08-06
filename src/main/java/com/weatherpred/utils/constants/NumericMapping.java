@@ -1,5 +1,15 @@
 package com.weatherpred.utils.constants;
 
+/**
+ * Class for numeric mapping constants
+ * 
+ * Date : August 4, 2017
+ * 
+ * @author Poornima Tom
+ * 
+ * @version 1.0
+ *
+ */
 public class NumericMapping {
 
 	// Mapping non-numeric weather status to double values

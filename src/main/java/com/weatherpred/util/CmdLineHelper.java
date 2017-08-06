@@ -12,19 +12,39 @@ import org.slf4j.LoggerFactory;
 import com.weatherpred.dto.InputFeaturesDTO;
 import com.weatherpred.utils.constants.Constants;
 
+/**
+ * Class for Command Line Parsing
+ * 
+ * Date : August 3, 2017
+ * 
+ * @author Poornima Tom
+ * 
+ * @version 1.0
+ *
+ */
 public class CmdLineHelper {
 
 	private final static Logger logger = LoggerFactory
 			.getLogger(CmdLineHelper.class);
 
+	/**
+	 * Command Line arguments
+	 */
 	private String[] args = null;
-	private Options options = new Options();
-	private InputFeaturesDTO inputFeatures = new InputFeaturesDTO();
+	/**
+	 * Command line options
+	 */
+	private Options options;
+	/**
+	 * Input Features object
+	 */
+	private InputFeaturesDTO inputFeatures;
 
 	public CmdLineHelper(String[] args) {
 
 		this.args = args;
 
+		options = new Options();
 		options.addOption(Constants.LAT, true, Constants.LATITUDE);
 		options.addOption(Constants.LONG, true, Constants.LONGITUDE);
 		options.addOption(Constants.ELE, true, Constants.ELEVATION);
@@ -34,6 +54,11 @@ public class CmdLineHelper {
 
 	}
 
+	/**
+	 * Method to parse command line arguments
+	 * 
+	 * @return parsed input features from cmdline args
+	 */
 	public InputFeaturesDTO parse() {
 		CommandLineParser parser = new BasicParser();
 		CommandLine cmdline = null;
@@ -44,16 +69,15 @@ public class CmdLineHelper {
 			if (cmdline.hasOption(Constants.HELP))
 				help();
 
+			inputFeatures = new InputFeaturesDTO();
 			inputFeatures.setLatitude(Double.parseDouble(cmdline
 					.getOptionValue(Constants.LAT)));
 			inputFeatures.setLongitude(Double.parseDouble(cmdline
 					.getOptionValue(Constants.LONG)));
 			inputFeatures.setElevation(Double.parseDouble(cmdline
 					.getOptionValue(Constants.ELE)));
-			inputFeatures.setUnixTime(cmdline
-					.getOptionValue(Constants.TIME));
-			inputFeatures
-					.setOutLocation(cmdline.getOptionValue(Constants.OUT));
+			inputFeatures.setUnixTime(cmdline.getOptionValue(Constants.TIME));
+			inputFeatures.setOutLocation(cmdline.getOptionValue(Constants.OUT));
 			return inputFeatures;
 		} catch (ParseException e) {
 			logger.error("Failed to parse command line properties", e);
@@ -64,9 +88,11 @@ public class CmdLineHelper {
 
 	}
 
+	/**
+	 * Method to print help
+	 */
 	private void help() {
-		// This prints out help
 		HelpFormatter formatter = new HelpFormatter();
 		formatter.printHelp("Options", options);
-		}
+	}
 }

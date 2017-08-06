@@ -1,5 +1,15 @@
 package com.weatherpred.utils.constants;
 
+/**
+ * Class for application constants
+ * 
+ * Date : August 4, 2017
+ * 
+ * @author Poornima Tom
+ * 
+ * @version 1.0
+ *
+ */
 public class Constants {
 
 	public static final String DECISION_TREE_BUILDER_APP_NAME = "Decision Tree Classifier Builder";

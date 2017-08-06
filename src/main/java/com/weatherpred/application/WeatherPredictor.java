@@ -29,7 +29,6 @@ import com.weatherpred.utils.constants.Constants;
  * @version 1.0
  *
  */
-
 public class WeatherPredictor {
 	private final static Logger logger = LoggerFactory
 			.getLogger(WeatherPredictor.class);
@@ -71,7 +70,6 @@ public class WeatherPredictor {
 	public DecisionTreeRegressionModel getPressureModel() {
 		return pressureModel;
 	}
-
 	/**
 	 * @return classifierModel
 	 */
@@ -87,11 +85,11 @@ public class WeatherPredictor {
 	 * Predicted Weather output
 	 */
 	private static WeatherDTO weatherDTO;
+	
 	/**
 	 * The static block loads and populate all the data for the required models
 	 * 
 	 */
-
 	static {
 		temperatureModel = MLModelUtil
 				.populateModelParams(new DecisionTreeRegressionModel(),
