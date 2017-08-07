@@ -126,7 +126,31 @@ public class WeatherDTO {
 		this.time = time;
 	}
 
-	public WeatherDTO() {
+
+	/**
+	 * Parameterized constructor
+	 * 
+	 * @param location
+	 * @param latitude
+	 * @param longitude
+	 * @param elevation
+	 * @param weatherStatus
+	 * @param temperature
+	 * @param humidity
+	 * @param pressure
+	 */
+	public WeatherDTO(String location, double latitude, double longitude,
+			double elevation, WeatherStatus weatherStatus,String time, double temperature,
+			double humidity, double pressure) {
+		this.location = location;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.elevation = elevation;
+		this.weatherStatus = weatherStatus;
+		this.time = time;
+		this.temperature = temperature;
+		this.humidity = humidity;
+		this.pressure = pressure;
 	}
 
 }

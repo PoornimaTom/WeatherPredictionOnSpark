@@ -10,6 +10,7 @@ import com.weatherpred.enums.WeatherParameter;
 import com.weatherpred.exceptions.WeatherPredException;
 import com.weatherpred.mlmodel.DecisionTreeClassifierModel;
 import com.weatherpred.mlmodel.DecisionTreeRegressionModel;
+import com.weatherpred.mlmodel.LinearRegressionMlModel;
 import com.weatherpred.utils.constants.Constants;
 import com.weatherpred.utils.constants.ModelConstants;
 
@@ -139,6 +140,70 @@ public class MLModelUtil {
 		return decisionTreeRegressionModel;
 	}
 
+	/**
+	 * Method to populate the algorithmic parameters for Linear Regression Model
+	 * 
+	 * @param linearRegressionMlModel
+	 * @param weatherParameter
+	 * @return linearRegressionMlModel with parameters
+	 */
+	public static LinearRegressionMlModel populateModelParams(
+			LinearRegressionMlModel linearRegressionMlModel,
+			WeatherParameter weatherParameter) {
+		try {
+			final ResourceBundle rb = ResourceBundle
+					.getBundle(Constants.MODEL_RESOURCE_BUNDLE);
+			linearRegressionMlModel.setTrainSize(Double.parseDouble(rb
+					.getString(ModelConstants.KEY_TRAINING_SIZE)));
+			linearRegressionMlModel.setTestSize(Double.parseDouble(rb
+					.getString(ModelConstants.KEY_TEST_SIZE)));
+
+			switch (weatherParameter) {
+
+			case TEMPERATURE:
+				linearRegressionMlModel
+						.setNumIterations(Integer.parseInt(rb
+								.getString(ModelConstants.KEY_TEMP_MODEL_NUM_ITERATIONS)));
+				linearRegressionMlModel.setStepSize((Double.parseDouble(rb
+						.getString(ModelConstants.KEY_TEMP_MODEL_STEP_SIZE))));
+				linearRegressionMlModel.setModelLocation(rb
+						.getString(ModelConstants.KEY_TEMP_LINEAR_MODEL_LOCATION));
+				break;
+			case HUMIDITY:
+				linearRegressionMlModel
+						.setNumIterations(Integer.parseInt(rb
+								.getString(ModelConstants.KEY_HUMIDITY_MODEL_NUM_ITERATIONS)));
+				linearRegressionMlModel
+						.setStepSize((Double.parseDouble(rb
+								.getString(ModelConstants.KEY_HUMIDITY_MODEL_STEP_SIZE))));
+				linearRegressionMlModel.setModelLocation(rb
+						.getString(ModelConstants.KEY_HUMIDITY_LINEAR_MODEL_LOCATION));
+				break;
+			case PRESSURE:
+				linearRegressionMlModel
+						.setNumIterations(Integer.parseInt(rb
+								.getString(ModelConstants.KEY_PRESSURE_MODEL_NUM_ITERATIONS)));
+				linearRegressionMlModel
+						.setStepSize((Double.parseDouble(rb
+								.getString(ModelConstants.KEY_PRESSURE_MODEL_STEP_SIZE))));
+				linearRegressionMlModel.setModelLocation(rb
+						.getString(ModelConstants.KEY_PRESSURE_LINEAR_MODEL_LOCATION));
+				break;
+
+			default:
+				throw new WeatherPredException("Invalid weather parameter");
+
+			}
+
+		} catch (Exception e) {
+			logger.error(e.getMessage());
+		}
+
+		return linearRegressionMlModel;
+	}
+
+	
+	
 	/**
 	 * Method to retrieve location of input weather data
 	 * 

@@ -36,14 +36,17 @@ public class ModelConstants {
 	public static final String KEY_TEMP_MODEL_NUM_ITERATIONS = "tempmodel.numIterations";
 	public static final String KEY_TEMP_MODEL_STEP_SIZE = "tempmodel.stepSize";
 	public static final String KEY_TEMP_MODEL_LOCATION = "temperature.model.location";
+	public static final String KEY_TEMP_LINEAR_MODEL_LOCATION = "temperature.linearmodel.location";
 	
 	public static final String KEY_HUMIDITY_MODEL_NUM_ITERATIONS = "humiditymodel.numIterations";
 	public static final String KEY_HUMIDITY_MODEL_STEP_SIZE = "humiditymodel.stepSize";
 	public static final String KEY_HUMIDITY_MODEL_LOCATION = "humidity.model.location";
+	public static final String KEY_HUMIDITY_LINEAR_MODEL_LOCATION = "humidity.linearmodel.location";
 	
 	public static final String KEY_PRESSURE_MODEL_NUM_ITERATIONS = "pressuremodel.numIterations";
 	public static final String KEY_PRESSURE_MODEL_STEP_SIZE = "pressuremodel.stepSize";
 	public static final String KEY_PRESSURE_MODEL_LOCATION = "pressure.model.location";
+	public static final String KEY_PRESSURE_LINEAR_MODEL_LOCATION = "pressure.linearmodel.location";
 	
 	public static final String KEY_TEMP_MODEL_IMPURITY = "tempmodel.impurity";
 	public static final String KEY_TEMP_MODEL_MAX_DEPTH = "tempmodel.maxDepth";

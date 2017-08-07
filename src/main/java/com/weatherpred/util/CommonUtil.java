@@ -7,6 +7,7 @@ import java.io.Writer;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 
 import org.slf4j.Logger;
@@ -114,25 +115,37 @@ public class CommonUtil {
 		return Constants.NOT_AVAILABLE;
 	}
 
-	public static boolean saveOutput(WeatherDTO weatherDTO, String outputLocation) {
+	public static boolean saveOutput(List<WeatherDTO> weatherDTOList, String outputLocation) {
 		boolean returnBoolean = false;
 		Writer writer = null;
 			
 	try {
 		writer = new BufferedWriter(new FileWriter(outputLocation));
 
-		String	output = weatherDTO.getLocation() + ModelConstants.DELIMITTER_PIPE
-				+ weatherDTO.getLatitude()
+		String	output = "\n\nOutput of Decision Tree Regression:\n"+ weatherDTOList.get(0).getLocation() + ModelConstants.DELIMITTER_PIPE
+				+ weatherDTOList.get(0).getLatitude()
 				+ ModelConstants.DELIMITTER_COMA
-				+ weatherDTO.getLongitude()
+				+ weatherDTOList.get(0).getLongitude()
 				+ ModelConstants.DELIMITTER_COMA
-				+ weatherDTO.getElevation()
+				+ weatherDTOList.get(0).getElevation()
 				+ ModelConstants.DELIMITTER_PIPE
-				+ weatherDTO.getTime()
-				+ ModelConstants.DELIMITTER_PIPE + weatherDTO.getWeatherStatus().toString()
-				+ ModelConstants.DELIMITTER_PIPE + weatherDTO.getTemperature()
-				+ ModelConstants.DELIMITTER_PIPE + weatherDTO.getPressure()
-				+ ModelConstants.DELIMITTER_PIPE + weatherDTO.getHumidity();
+				+ weatherDTOList.get(0).getTime()
+				+ ModelConstants.DELIMITTER_PIPE + weatherDTOList.get(0).getWeatherStatus().toString()
+				+ ModelConstants.DELIMITTER_PIPE +weatherDTOList.get(0).getTemperature()
+				+ ModelConstants.DELIMITTER_PIPE + weatherDTOList.get(0).getPressure()
+				+ ModelConstants.DELIMITTER_PIPE + weatherDTOList.get(0).getHumidity()
+		+"\n\nOutput of Linear Regression:\n"+ weatherDTOList.get(1).getLocation() + ModelConstants.DELIMITTER_PIPE
+		+ weatherDTOList.get(1).getLatitude()
+		+ ModelConstants.DELIMITTER_COMA
+		+ weatherDTOList.get(1).getLongitude()
+		+ ModelConstants.DELIMITTER_COMA
+		+ weatherDTOList.get(1).getElevation()
+		+ ModelConstants.DELIMITTER_PIPE
+		+ weatherDTOList.get(1).getTime()
+		+ ModelConstants.DELIMITTER_PIPE + weatherDTOList.get(1).getWeatherStatus().toString()
+		+ ModelConstants.DELIMITTER_PIPE +weatherDTOList.get(1).getTemperature()
+		+ ModelConstants.DELIMITTER_PIPE + weatherDTOList.get(1).getPressure()
+		+ ModelConstants.DELIMITTER_PIPE + weatherDTOList.get(1).getHumidity();
 	
 		logger.info("Output"+output);
 		writer.write(output + "\n");
