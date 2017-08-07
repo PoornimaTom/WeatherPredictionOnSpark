@@ -23,7 +23,7 @@ Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.h
 [Java 1.7](https://java.com/en/download/) and [Apache Spark 1.6.0](https://spark.apache.org/releases/spark-release-1-6-0.html) must be installed in the system.
 
 ## How to run the application ?
-Step 1: Build the ML models; a classifier for weather condition (SUNNY/RAIN/SNOW) and regression models(both Linear and Decision Tree) each for temperature, humidity and pressure. Change Property file **model.properties** accordingly to tune the algorithm.
+Step 1: Build the ML models; a classifier for weather condition (SUNNY/RAIN/SNOW) and regression model each for temperature, humidity and pressure. Change Property file **model.properties** accordingly to tune the algorithm.
 
 ## Build the maven project
 ```
