@@ -31,6 +31,10 @@ public class WeatherPredictorTest {
 		assertNotEquals(weatherPredApp.getTemperatureModel(), null);
 		assertNotEquals(weatherPredApp.getHumidityModel(), null);
 		assertNotEquals(weatherPredApp.getPressureModel(), null);
+		
+		assertNotEquals(weatherPredApp.getTemperatureLinearModel(), null);
+		assertNotEquals(weatherPredApp.getHumidityLinearModel(), null);
+		assertNotEquals(weatherPredApp.getPressureLinearModel(), null);
 	}
 
 }

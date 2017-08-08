@@ -5,6 +5,9 @@ package com.weatherpred.util.test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -51,9 +54,17 @@ public class CommonUtilTest {
 	 */
 	private static double dummy;
 	/**
-	 * sample output
+	 * sample output 1
 	 */
-	private static WeatherDTO sampOutput;
+	private static WeatherDTO sampOutput1;
+	/**
+	 * sample output 2
+	 */
+	private static WeatherDTO sampOutput2;
+	/**
+	 * sample output List
+	 */
+	private static List<WeatherDTO> sampOutputList;
 	
 	/**
 	 * sampleLocation
@@ -76,16 +87,13 @@ public class CommonUtilTest {
 		formattedTime = "2015-03-05T19:00:00Z";
 		dummy = -1;
 		delta = 0;
-		sampleLocation="/tmp/test.txt";
-		sampOutput = new WeatherDTO();
-		sampOutput.setTime(formattedTime);
-		sampOutput.setLatitude(0);
-		sampOutput.setLongitude(0);
-		sampOutput.setElevation(0);
-		sampOutput.setHumidity(0);
-		sampOutput.setPressure(0);
-		sampOutput.setTemperature(0);
-		sampOutput.setWeatherStatus(WeatherStatus.SUNNY);
+		sampleLocation="/tmp/test"+Math.random()+".txt";
+		sampOutput1 = new WeatherDTO(Constants.NOT_AVAILABLE, 0.0, 0.0,0.0, WeatherStatus.SUNNY, formattedTime, 0, 0, 0);
+		sampOutput2 = new WeatherDTO(Constants.NOT_AVAILABLE, 0.0, 0.0,0.0, WeatherStatus.RAIN, formattedTime, 0, 0, 0);
+		sampOutputList = new ArrayList<WeatherDTO>();
+		sampOutputList.add(sampOutput1);	
+		sampOutputList.add(sampOutput2);
+		
 	}
 	
 	/**
@@ -136,8 +144,7 @@ public class CommonUtilTest {
 	 */
 	@Test
 	public void testSaveOutput() {
-		assertEquals(CommonUtil.saveOutput(null, null), false);
-		assertEquals(CommonUtil.saveOutput(sampOutput,sampleLocation), true);
+		assertEquals(CommonUtil.saveOutput(sampOutputList,sampleLocation), true);
 
 	}
 
