@@ -67,7 +67,6 @@ NA|24.8614622,67.0099388,9.870092392|2015-02-05T08:00:00Z|SUNNY|70.9878301886792
 --long           **Longitude of the location
 --ele            **Elevation of the location 
 --time           **Unix TimeStamp
---out		     **Output Location
-
+--out            **Output Location
 
 **  -> Mandatory arguments  
