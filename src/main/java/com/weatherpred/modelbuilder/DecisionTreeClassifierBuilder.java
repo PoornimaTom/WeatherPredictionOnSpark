@@ -41,14 +41,12 @@ public class DecisionTreeClassifierBuilder {
 	 */
 	private static DecisionTreeClassifierModel decisionTreeClassifierModel;
 
-	
 	/**
 	 * Get DecisionTree Classifier Model
 	 */
 	public DecisionTreeClassifierModel getDecisionTreeClassifierModel() {
 		return decisionTreeClassifierModel;
 	}
-	
 
 	/**
 	 * The static block populates the model with required ML parameters
@@ -66,14 +64,11 @@ public class DecisionTreeClassifierBuilder {
 		JavaSparkContext jsc = new JavaSparkContext(sparkConf);
 
 		try {
-		
-//			 URL url = DecisionTreeClassifierBuilder.class.getResource(
-//                     "weather_data.csv");
-			// logger.info("URL"+url.toString());
+
 			// Load weather data from CSV file
-			JavaRDD<String> weatherData = jsc.textFile("classes/weather_data.csv");
-			
-		
+			JavaRDD<String> weatherData = jsc.textFile(MLModelUtil
+					.getWeatherDataLocation());
+
 			// Transform the non-numeric features into numeric values
 			JavaRDD<String> transformedWeatherData = weatherData
 					.map(transformData);
