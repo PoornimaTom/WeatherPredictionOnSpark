@@ -53,7 +53,7 @@ eg: spark-submit --class com.weatherpred.modelbuilder.DecisionTreeClassifierBuil
 ```
 spark-submit --class com.weatherpred.application.WeatherPredictor <jarlocation> --lat <latitude> --long  <longitude> --ele  <elevation> --time <unixTimeStamp> --out <outputLocation>
 
-eg: spark-submit --class com.weatherpred.application.WeatherPredictor WeatherPredictor.jar --lat 24.8614622 --long 67.0099388 --ele 9.870092392 --time 1423123200 --out /home/user/output.txt
+eg: spark-submit --class com.weatherpred.application.WeatherPredictor WeatherPredictionOnSpark-0.0.1-SNAPSHOT.jar --lat 24.8614622 --long 67.0099388 --ele 9.870092392 --time 1423123200 --out /home/usr/output.txt
 ```
 
 ## Expected Output:
