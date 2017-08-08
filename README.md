@@ -27,7 +27,8 @@ Step 1: Modify Property file **model.properties** accordingly to tune the algori
 
 Step 2: Build and evaluate the ML models; a classifier for weather condition (SUNNY/RAIN/SNOW) and a regression model each for temperature, humidity and pressure.
 
-Step 3: Predict weather for a given latitude, longitude, elevation and time using the models built in step 2. 
+Step 3: Predict weather for a given latitude, longitude, elevation and time using the models built in step 2.
+Predicted output format : Location|latitude,longitude,elevation|Timestamp|WeatherCondition|Temperature|Pressure|Humidity
 
 ## Build the maven project
 ```
