@@ -66,11 +66,14 @@ public class DecisionTreeClassifierBuilder {
 		JavaSparkContext jsc = new JavaSparkContext(sparkConf);
 
 		try {
-
+		
+//			 URL url = DecisionTreeClassifierBuilder.class.getResource(
+//                     "weather_data.csv");
+			// logger.info("URL"+url.toString());
 			// Load weather data from CSV file
-			JavaRDD<String> weatherData = jsc.textFile(MLModelUtil
-					.getWeatherDataLocation());
-
+			JavaRDD<String> weatherData = jsc.textFile("classes/weather_data.csv");
+			
+		
 			// Transform the non-numeric features into numeric values
 			JavaRDD<String> transformedWeatherData = weatherData
 					.map(transformData);
@@ -111,7 +114,7 @@ public class DecisionTreeClassifierBuilder {
 	}
 
 	/**
-	 * Function to transform each input element - converts categorical feature
+	 * Function to transform each input element : converts categorical feature
 	 * to numerical
 	 */
 	public static Function<String, String> transformData = new Function<String, String>() {
