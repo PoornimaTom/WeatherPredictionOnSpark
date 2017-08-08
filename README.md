@@ -22,12 +22,16 @@ Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.h
 ## Prerequisites
 [Java 1.7](https://java.com/en/download/) and [Apache Spark 1.6.0](https://spark.apache.org/releases/spark-release-1-6-0.html) must be installed in the system.
 
-## How to run the application ?
-Step 1: Build the ML models; a classifier for weather condition (SUNNY/RAIN/SNOW) and regression model each for temperature, humidity and pressure. Change Property file **model.properties** accordingly to tune the algorithm.
+# How to run the application ?
+Step 1: Modify Property file **model.properties** accordingly to tune the algorithm and to specify input/output file locations. Input dataset used is weather_data.csv.
+
+Step 2: Build and evaluate the ML models; a classifier for weather condition (SUNNY/RAIN/SNOW) and a regression model each for temperature, humidity and pressure.
+
+Step 3: Predict weather for a given latitude, longitude, elevation and time using the models built in step 2. 
 
 ## Build the maven project
 ```
-mvn clean install  
+mvn clean install package
 ```
 
 ## Run the project
@@ -47,7 +51,7 @@ eg: spark-submit --class com.weatherpred.modelbuilder.DecisionTreeClassifierBuil
 ```
 spark-submit --class com.weatherpred.application.WeatherPredictor <jarlocation> --lat <latitude> --long  <longitude> --ele  <elevation> --time <unixTimeStamp> --out <outputLocation>
 
-eg: spark-submit --class com.weatherpred.application.WeatherPredictor WeatherPredictor.jar --lat 24.8614622 --long 67.0099388 --ele 9.870092392 --time 1423123200 --out /home/user/output.txt
+eg: spark-submit --class com.weatherpred.application.WeatherPredictor WeatherPredictionOnSpark-0.0.1-SNAPSHOT.jar --lat 24.8614622 --long 67.0099388 --ele 9.870092392 --time 1423123200 --out /home/user/output.txt
 ```
 
 ## Expected Output:
