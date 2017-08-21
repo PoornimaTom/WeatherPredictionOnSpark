@@ -16,6 +16,13 @@ Weather prediction involves prediction of temperature, pressure, humidity and we
 
 Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.html) library to implement regression and classification. MLlib is Spark's machine learning(ML) library which makes practical machine learning scalable and easy.
 
+## Decision Trees
+If you are a beginner to Machine Learning, this section will help you understand the basics of Decision Tree and how we have used it to solve the problem at hand.
+
+Decision tree builds classification or regression models in the form of a tree structure. A dataset is incrementally broken down into smaller subsets simultaneously developing an associated decision tree. The final result is a tree with **decision node** and **leaf nodes**. A decision node (e.g. Latitude, Pressure, Humidity) has two or more branches split based on its values. For classification problems, leaf node represents a classification or decision like *Rain*. For regression problems, leaf node represents a predicted numerical value like *temperature value*. The below diagram shows how we have used Decision Tree classification to predict the weather condition. 
+
+
+
 ## Prerequisites
 [Java 1.7](https://java.com/en/download/) and [Apache Spark 1.6.0](https://spark.apache.org/releases/spark-release-1-6-0.html) must be installed in the system.
 
