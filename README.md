@@ -16,7 +16,6 @@ Weather prediction involves prediction of temperature, pressure, humidity and we
 
 Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.html) library to implement regression and classification. MLlib is Spark's machine learning(ML) library which makes practical machine learning scalable and easy.
 
-
 ## Prerequisites
 [Java 1.7](https://java.com/en/download/) and [Apache Spark 1.6.0](https://spark.apache.org/releases/spark-release-1-6-0.html) must be installed in the system.
 
