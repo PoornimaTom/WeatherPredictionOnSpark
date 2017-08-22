@@ -21,7 +21,7 @@ The first three predicates are **continuous** values which need a **regression m
 Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.html) library to implement regression and classification. MLlib is Spark's machine learning(ML) library which makes practical machine learning scalable and easy.
 
 ## Machine Learning Workflow
-![alt text](https://github.com/PoornimaTom/WeatherPredictionOnSpark/blob/master/images/PredictiveModeling.jpg)
+![alt text](https://github.com/PoornimaTom/WeatherPredictionOnSpark/blob/master/images/Predictivemodeling.jpg)
 Image Courtesy : [upxacademy](https://upxacademy.com/introduction-machine-learning/)
 
 | Predicted Value| Input Feature Set| Algorithm Used|
