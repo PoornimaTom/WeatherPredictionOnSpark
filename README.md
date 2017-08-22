@@ -21,15 +21,13 @@ The first three predicates are **continuous** values which need a **regression m
 Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.html) library to implement regression and classification. MLlib is Spark's machine learning(ML) library which makes practical machine learning scalable and easy.
 
 ## Machine Learning Workflow
-
 ![alt text](https://upxacademy.com/wp-content/uploads/2016/07/Steps-to-Predictive-Modelling.jpg)
-
 Image Courtesy : https://upxacademy.com/introduction-machine-learning/
 
 | Predicted Value| Input Feature Set| Algorithm Used|
 | --- | --- |--- |
 | Temperature/Pressure/Humidity        |     { latitude, longitude, elevation, month, hour of the day }      |          Decision Tree Regression |
-| Weather Condition  (Rain/Snow/Sunny)| {humidity, pressure, temperature, latitude, longitude, elevation, month, hour of the day}     | Decision Tree Classification |
+| Weather Condition  (Rain/Snow/Sunny)| { humidity, pressure, temperature, latitude, longitude, elevation, month, hour of the day }     | Decision Tree Classification |
 
 ## Decision Trees
 If you are a beginner to Machine Learning, this section will help you understand the basics of Decision Tree and how we have used it to solve the problem at hand.
