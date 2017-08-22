@@ -11,7 +11,7 @@ To simulate an environment (taking into account atmosphere, topography, geograph
 
 # The Machine learning approach
 The second approach is used in this project, where weather prediction is made using Machine Learning algorithms on Spark Mllib using historical weather data. The basic premise of machine learning is to build algorithmic models that receive input data and use statistical analysis to predict an output value within an acceptable range. The input weather data can be obtained from API services or verified weather information websites. For example, [Wunderground](https://wunderground.com/) and [WorldWeatherOnline](https://developer.worldweatheronline.com/).
-In this solution, there are four values which we are trying to predict :
+In this solution, there are four values which we are trying to predict : <br />
 **1. Temperature** <br />
 **2. Pressure** <br />
 **3. Humidity** <br />
@@ -21,8 +21,8 @@ The first three predicates are **continuous** values which need a **regression m
 Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.html) library to implement regression and classification. MLlib is Spark's machine learning(ML) library which makes practical machine learning scalable and easy.
 
 ## Machine Learning Workflow
-![alt text](https://upxacademy.com/wp-content/uploads/2016/07/Steps-to-Predictive-Modelling.jpg)
-Image Courtesy : https://upxacademy.com/introduction-machine-learning/
+![alt text](https://github.com/PoornimaTom/WeatherPredictionOnSpark/blob/master/images/Steps-to-Predictive-Modelling.jpg)
+Image Courtesy : [upxacademy](https://upxacademy.com/introduction-machine-learning/)
 
 | Predicted Value| Input Feature Set| Algorithm Used|
 | --- | --- |--- |
