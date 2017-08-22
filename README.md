@@ -22,8 +22,10 @@ Here I have used [spark.mllib](https://spark.apache.org/docs/1.6.0/mllib-guide.h
 
 ## Machine Learning Workflow
 ![alt text](https://github.com/PoornimaTom/WeatherPredictionOnSpark/blob/master/images/Predictivemodeling.jpg)
-Image Courtesy : [upxacademy](https://upxacademy.com/introduction-machine-learning/)
 
+Image Courtesy : [upxacademy](https://upxacademy.com/introduction-machine-learning/) <br />
+
+### Implementation
 | Predicted Value| Input Feature Set| Algorithm Used|
 | --- | --- |--- |
 | Temperature/Pressure/Humidity        |     { latitude, longitude, elevation, month, hour of the day }      |          Decision Tree Regression |
@@ -35,6 +37,19 @@ If you are a beginner to Machine Learning, this section will help you understand
 Decision tree builds classification or regression models in the form of a tree structure. A dataset is incrementally broken down into smaller subsets simultaneously developing an associated decision tree.  Each subset is chosen greedily by selecting the best split from a set of possible splits, in order to maximize the information gain at a tree node.The final result is a tree with **decision nodes** and **leaf nodes**. A decision node (e.g. Latitude, Pressure, Humidity) has two or more branches split based on its values. For classification problems, leaf node represents a classification or decision like *Rain*. For regression problems, leaf node represents a predicted numerical value like *temperature value*. The below diagram shows how we have used Decision Tree classification to predict the weather condition. 
 
 ![alt text](https://github.com/PoornimaTom/WeatherPredictionOnSpark/blob/master/images/Decision%20Tree.jpg)
+
+### Guidelines for decision trees using spark.mllib <br />
+#### Problem specification parameters <br />
+1. *algo* - Classification or Regression <br />
+2. *numClasses* - Number of classes (for Classification only) <br />
+3. *categoricalFeaturesInfo* - Specifies which features are categorical and number of categorical values each can take. <br />
+
+#### Tunable parameters <br />
+1. *maxDepth* - Maximum depth of the tree <br />
+2. *maxBins* - Number of bins used when discretizing continuous features <br />
+3. *impurity* - Impurity measure to choose between candidate splits. This solution has used *gini* for classification and *variance* for regression <br />
+
+For more information on implementing Decision Trees using Spark Mllib, refer [link](https://spark.apache.org/docs/1.6.0/mllib-decision-tree.html)
 
 ## Prerequisites
 [Java 1.7](https://java.com/en/download/) and [Apache Spark 1.6.0](https://spark.apache.org/releases/spark-release-1-6-0.html) must be installed in the system.
