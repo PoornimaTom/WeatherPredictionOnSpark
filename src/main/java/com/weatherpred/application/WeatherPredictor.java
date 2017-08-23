@@ -115,11 +115,13 @@ public class WeatherPredictor {
 				Constants.WEATHER_APP_NAME).setMaster(Constants.LOCAL_STRING);
 		JavaSparkContext jsc = new JavaSparkContext(sparkConf);
 
+		// Parse cmdline arguments
 		inputFeatures = new CmdLineHelper(args).parse();
 
 		try {
-
-			// Creating input vector to predict regression
+			/* Creating feature vector from cmdline arguments,
+			features considered for regression are lat, long, elevation, month and hour
+			*/
 			Vector inputDataRegression = Vectors.sparse(5, new int[] { 0, 1, 2,
 					3, 4 }, new double[] { inputFeatures.getLatitude(),
 					inputFeatures.getLongitude(), inputFeatures.getElevation(),
@@ -141,7 +143,10 @@ public class WeatherPredictor {
 					inputDataRegression);
 			weatherDTO.setPressure(pressure);
 
-			// Creating input vector to predict classification
+			/* Creating feature vector from cmdline arguments,
+			features considered for classification are humidity, lat, long, elevation, pressure,
+			temperature, month and hour
+			*/
 			Vector testDataClassifier = Vectors.sparse(
 					8,
 					new int[] { 0, 1, 2, 3, 4, 5, 6, 7 },
@@ -156,8 +161,10 @@ public class WeatherPredictor {
 					classifierModel.getModelLocation()).predict(
 					testDataClassifier);
 
+			// Setting weather status - Rain/Snow/Sunny
 			weatherDTO.setWeatherStatus(CommonUtil.findWeatherStatus(weather));
 
+			// Set geo location from lat, long and ele
 			weatherDTO.setLocation(CommonUtil.findLocation(
 					inputFeatures.getLatitude(), inputFeatures.getLongitude(),
 					inputFeatures.getElevation()));
