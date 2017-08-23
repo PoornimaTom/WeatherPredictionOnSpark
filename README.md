@@ -34,7 +34,7 @@ Image Courtesy : [upxacademy](https://upxacademy.com/introduction-machine-learni
 ## Decision Trees
 If you are a beginner to Machine Learning, this section will help you understand the basics of Decision Tree and how we have used it to solve the problem at hand.
 
-Decision tree builds classification or regression models in the form of a tree structure. A dataset is incrementally broken down into smaller subsets simultaneously developing an associated decision tree.  Each subset is chosen greedily by selecting the best split from a set of possible splits, in order to maximize the information gain at a tree node.The final result is a tree with **decision nodes** and **leaf nodes**. A decision node (e.g. Latitude, Pressure, Humidity) has two or more branches split based on its values. For classification problems, leaf node represents a classification or decision like *Rain*. For regression problems, leaf node represents a predicted numerical value like *temperature value*. The below diagram shows how we have used Decision Tree classification to predict the weather condition. 
+Decision tree builds classification or regression models in the form of a tree structure. A dataset is incrementally broken down into smaller subsets simultaneously developing an associated decision tree.  Each subset is chosen greedily by selecting the best split from a set of possible splits, in order to maximize the information gain at a tree node. The final result is a tree with **decision nodes** and **leaf nodes**. A decision node (e.g. Latitude, Pressure, Humidity) has two or more branches split based on its values. For classification problems, leaf node represents a classification or decision like *Rain*. For regression problems, leaf node represents a predicted numerical value like *temperature value*. The below diagram shows how we have used Decision Tree classification to predict the weather condition. 
 
 ![alt text](https://github.com/PoornimaTom/WeatherPredictionOnSpark/blob/master/images/Decision%20Tree.jpg)
 
@@ -47,7 +47,7 @@ Decision tree builds classification or regression models in the form of a tree s
 #### Tunable parameters <br />
 1. *maxDepth* - Maximum depth of the tree <br />
 2. *maxBins* - Number of bins used when discretizing continuous features <br />
-3. *impurity* - Impurity measure to choose between candidate splits. This solution has used *gini* for classification and *variance* for regression <br />
+3. *impurity* - Impurity measure to choose between candidate splits. This solution has used *gini* for classification and *variance* for regression. <br />
 
 For more information on implementing Decision Trees using Spark Mllib, refer [link](https://spark.apache.org/docs/1.6.0/mllib-decision-tree.html)
 
